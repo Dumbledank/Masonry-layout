@@ -1,0 +1,110 @@
+//variables
+$custom-value-P: 80%;
+$custom-val: 30px;
+
+//fonts
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&display=swap');
+
+* {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+}
+
+body {
+  margin: 0;
+}
+
+.bricks {
+  margin: 20px auto;
+  padding:0 0 4px 4px;
+  overflow:hidden;
+  max-width:1000px;
+  background: black;
+}
+.brick {
+  width:200px;
+  color:white;
+  float:left;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 20;
+}
+.text-brick {
+  width: 90%;
+  margin: 0 auto;
+}
+/* animation */
+.bricks-ready {
+  -webkit-transition:width .7s ease;
+  -moz-transition:width .7s ease;
+  -ms-transition:width .7s ease;
+  -o-transition:width .7s ease;
+  transition:width .7s ease;
+}
+.brick-ready {
+  -webkit-transition:top .7s ease,left .7s ease;
+  -moz-transition:top .7s ease,left .7s ease;
+  -ms-transition:top .7s ease,left .7s ease;
+  -o-transition:top .7s ease,left .7s ease;
+  transition:top .7s ease,left .7s ease;
+}
+
+// window panel
+
+.img-container {
+  object-position: center;
+  display: block;
+  position: relative;
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+}
+
+.img-container img {
+  display: block;
+  width: 100%;
+}
+
+.shape {
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: $custom-value-P;
+  top: calc(100% - #{$custom-val});
+  
+  transition: top 500ms ease;
+  z-index: 10;
+  clip-path: polygon(0 $custom-val, 90% 0, 100% $custom-val, 100% 100%, 0 100%);
+  background: rgba(27, 24, 24, 0.8);
+  color: whitesmoke;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.shape-txt-container {
+  position: absolute;
+  width: 90%;
+  top: 30px;
+}
+
+.shape-txt-container h2 {
+  margin: 10px;
+}
+
+.img-container:hover .shape {
+  top: 100% - $custom-value-P;
+}
+
+.img-container a {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 20;
+}
